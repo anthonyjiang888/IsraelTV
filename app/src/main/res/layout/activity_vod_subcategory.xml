@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:id="@+id/layout_root_vodsub">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="right"
+        android:textColor="#fff"
+        android:text="Categoriname"
+        android:layout_marginTop="25dp"
+        android:id="@+id/cat_name"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"/>
+
+    <israel13.androidtv.Utils.CustomGridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gridview_vod_subcategory"
+        android:layout_gravity="right"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbarThumbVertical="@drawable/custom_scroll_style"
+        android:verticalScrollbarPosition="right"
+        android:paddingRight="2dp"
+        android:listSelector="@color/transparent"
+        android:focusable="true"
+        android:layoutDirection="rtl"
+        android:paddingBottom="10dp"
+        android:nextFocusLeft="@+id/gridview_vod_sub_subcategory"/>
+</LinearLayout>

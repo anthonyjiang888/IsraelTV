@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:id="@+id/text_child_listview_record"
+        android:textColor="#FFF"
+        android:textSize="15sp"/>
+
+    <israel13.androidtv.Utils.NonScrollListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/details_listview_child_record_search"
+        android:listSelector="@drawable/custom_bg1"
+        android:divider="@color/transparent"/>
+
+</LinearLayout>

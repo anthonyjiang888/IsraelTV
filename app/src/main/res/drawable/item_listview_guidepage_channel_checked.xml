@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/listview_item_selected"
+          android:state_selected="false"
+          android:state_activated="true"/>
+    <item android:drawable="@drawable/listview_item_selected_hovered"
+          android:state_selected="true"
+          android:state_activated="true"/>
+    <item android:drawable="@drawable/listview_item_hovered"
+        android:state_selected="true"
+        android:state_activated="false"/>
+    <item android:drawable="@color/transparent"/> <!-- default -->
+</selector>

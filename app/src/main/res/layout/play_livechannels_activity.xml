@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                android:id="@+id/playerView_live"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:controller_layout_id="@layout/player_controls_withplaylist"
+                app:resize_mode="fill"
+                app:use_controller="true"/>
+
+            <LinearLayout
+                android:id="@+id/layout_channel_number"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/custom_bg_channel_num"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/text_channel_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_connection_state"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/custom_bg_channel_num"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/text_connection_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_connectionstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#B5000000"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:src="@mipmap/ic_alert" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Your connection has been lost.Attempting to reconnect..."
+                    android:textColor="#FFFFFF"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_modified_livechannels"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#B5000000">
+
+            <LinearLayout
+                android:id="@+id/ll_for_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="130dp">
+
+                <TextClock
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:text="06:35"
+                    android:textColor="#ffffff"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:format24Hour="HH:mm"
+                    android:format12Hour="HH:mm"
+                    android:timeZone="Asia/Jerusalem" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/show_live_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="right"
+                        android:maxLines="1"
+                        android:text=" - שידור חי"
+                        android:textColor="#ffffff"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_channel_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_for_time"
+                        android:layout_marginTop="5dp"
+                        android:gravity="right|center"
+                        android:maxLines="1"
+                        android:paddingLeft="1dp"
+                        android:text="שם הערוץ"
+                        android:textColor="#ffffff"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/tv_no_of_channel_remote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_for_time"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="22"
+                        android:textColor="#ffffff"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@+id/ll_for_time"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="130dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/red" />
+
+            <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="130dp"
+            android:id="@+id/ll_for_title"
+            android:layout_below="@+id/view1">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:src="@drawable/left_arrow_background"
+                android:id="@+id/Iv_next_show"
+                android:focusable="false"
+                android:layout_gravity="left"
+                android:nextFocusRight="@+id/Iv_previous_show"
+                android:visibility="visible"
+                android:clickable="false"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:text="כותרת המופע"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:layout_marginTop="2dp"
+                android:id="@+id/tv_title_of_show"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:src="@drawable/right_arrow_background"
+                android:id="@+id/Iv_previous_show"
+                android:focusable="false"
+                android:layout_gravity="right"
+                android:nextFocusRight="@+id/Iv_up_channele"
+                android:visibility="visible"
+                android:clickable="false"
+                android:layout_alignParentRight="true"
+                />
+
+        </LinearLayout>
+            -->
+
+            <LinearLayout
+                android:id="@+id/ll_for_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="128dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:id="@+id/Iv_next_show"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.1"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:nextFocusRight="@+id/Iv_previous_show"
+                    android:visibility="invisible"
+                    android:src="@drawable/left_arrow_background" />
+
+                <TextView
+                    android:id="@+id/tv_title_of_show"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1.8"
+                    android:gravity="right"
+                    android:text="כותרת המופע"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/Iv_previous_show"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="0.1"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:nextFocusRight="@+id/Iv_up_channele"
+                    android:visibility="invisible"
+                    android:src="@drawable/right_arrow_background" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_description_of_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ll_for_title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="180dp"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLines="3"
+                android:minLines="3"
+                android:text="תיאור על הצג"
+                android:textColor="#FFF"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/epg_live_time"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tv_description_of_show"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="180dp"
+                android:layout_marginTop="2dp"
+                android:focusable="false"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/total_lay_with_bar_add_fav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/epg_move_to_record_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/selected_season"
+                        android:focusable="false"
+                        android:nextFocusLeft="@+id/Iv_next_show"
+                        android:nextFocusRight="@+id/epg_add_to_fav"
+                        android:orientation="horizontal"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="2dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right|center"
+                            android:layout_marginRight="7dp"
+                            android:gravity="right|center"
+                            android:text="עבור להקלטות"
+                            android:textColor="#fff"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/rec_imag"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp"
+                            android:src="@drawable/record_red" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/epg_add_to_fav"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:focusable="false"
+                        android:clickable="false">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="0dp"
+                            android:background="@drawable/selected_season"
+
+                            android:nextFocusLeft="@+id/epg_move_to_record_mode"
+                            android:orientation="horizontal"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="2dp">
+
+                            <TextView
+                                android:id="@+id/add_fav_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right|center"
+                                android:layout_marginRight="7dp"
+                                android:gravity="center|right"
+                                android:text="הוסף למועדפים"
+                                android:textColor="#fff"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/add_To_fav_img"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ok_add_fav_icon" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:background="#ffffff"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/genre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="right|center"
+                    android:paddingRight="0dp"
+                    android:text="ז&apos;אנר:מידע אינו זמין"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#ffffff" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/start_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="06:20"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_dash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="10:30"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/epg_live_time"
+                android:layout_marginTop="14dp"
+                android:focusable="false"
+                android:paddingTop="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/pgbar_livetime"
+                        style="@style/CustomProgressBarHorizontal"
+                        android:layout_width="100dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="7dp"
+                        android:background="#ffffff"
+                        android:gravity="center"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="80" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/channel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/Iv_up_channele"
+                    android:layout_width="37dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:nextFocusDown="@+id/Iv_down_channel"
+                    android:src="@drawable/up_arrow_background"
+                    android:visibility="visible" />
+
+
+
+                <RelativeLayout
+                    android:id="@+id/llay_channel_img"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:focusable="false"
+                    android:nextFocusDown="@+id/epg_add_to_fav"
+                    android:orientation="vertical"
+                    android:padding="2dp">
+
+                    <!-- android:background="@drawable/custom_bg1" -->
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/Iv_channel_played"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:focusable="false"
+                        android:src="@drawable/channel_placeholder"
+                        app:riv_corner_radius="10dip"
+                        app:riv_mutate_background="true" />
+
+                    <ImageView
+                        android:id="@+id/Iv_channel_not_playing"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:adjustViewBounds="true"
+                        android:layout_centerInParent="true"
+                        android:focusable="false"
+                        android:src="@drawable/button_focused_livechannel" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/Iv_down_channel"
+                    android:layout_width="37dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:nextFocusDown="@+id/llay_channel_img"
+                    android:src="@drawable/down_arrow_background"
+                    android:visibility="visible" />
+                <!--
+                <ProgressBar
+                android:id="@+id/pgbar_livetime"
+                style="@style/CustomProgressBarHorizontal"
+                android:layout_width="135dp"
+                android:layout_height="23dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="50"
+                android:background="#ffffff"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="0dp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                />
+                -->
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/progressbar_layout_live_channels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progressBar_alldata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

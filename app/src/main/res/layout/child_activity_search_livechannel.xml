@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:focusable="true"
+    android:background="@drawable/custom_bg1"
+    android:clickable="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8px"
+        >
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image_recyclerview_child_live"
+        android:layout_width="130dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        app:riv_corner_radius="10dip"
+        android:src="@drawable/radio"
+        app:riv_border_width="1dp"
+        android:adjustViewBounds="true"
+        app:riv_mutate_background="true" />
+
+        </LinearLayout>
+</LinearLayout>

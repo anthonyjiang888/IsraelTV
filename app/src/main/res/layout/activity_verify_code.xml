@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#030303"
+              android:gravity="center_vertical"
+              android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/scrollview_vert_margin"
+        android:layout_marginLeft="@dimen/scrollview_horz_margin"
+        android:layout_marginRight="@dimen/scrollview_horz_margin"
+        android:layout_marginTop="@dimen/scrollview_vert_margin"
+        android:background="@drawable/form_background_grey"
+        android:isScrollContainer="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_container_vert_margin"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/main_container_horz_margin"
+            android:paddingRight="@dimen/main_container_horz_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/verify_title"
+                android:textColor="@color/label_font_color"
+                android:textSize="@dimen/title_font_size"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_color"/>
+
+            <TextView
+                android:id="@+id/verify_tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:paddingTop="10dp"
+                android:text="@string/verify_description"
+                android:textColor="@color/label_font_color"
+                android:textSize="@dimen/label_font_size"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/verify_code"
+                android:textColor="@color/label_font_color"
+                android:textSize="@dimen/label_font_size"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <israel13.androidtv.Utils.CustomEditText
+                    android:id="@+id/verify_edit_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/register_edittext_height"
+                    android:background="@drawable/edit_background_blue"
+                    android:focusable="true"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/verify_code"
+                    android:inputType="textNoSuggestions"
+                    android:nextFocusDown="@+id/verify_btn_verify"
+                    android:nextFocusUp="@+id/verify_btn_verify"
+                    android:paddingLeft="@dimen/register_edittext_padding"
+                    android:paddingRight="@dimen/register_edittext_padding"
+                    android:textColor="@color/edittext_font_color"
+                    android:textColorHint="@color/edittext_hint_font_color"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/edittext_font_size"/>
+
+            </RelativeLayout>
+
+            <requestFocus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/verify_tv_resend_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:background="@drawable/resend_button_background"
+                    android:focusable="true"
+                    android:gravity="right|center_vertical"
+                    android:nextFocusDown="@+id/verify_btn_verify"
+                    android:nextFocusUp="@+id/verify_edit_code"
+                    android:text="@string/verify_resend_code"
+                    android:textColor="#337ab7"
+                    android:textColorLink="#000"
+                    android:textSize="@dimen/label_font_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/verify_resend_count_right"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size"/>
+
+                <TextView
+                    android:id="@+id/verify_tv_resend_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/verify_resend_count_left"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="40dp"
+                android:gravity="right">
+
+                <Button
+                    android:id="@+id/verify_btn_contact_us"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/resend_button_background"
+                    android:nextFocusDown="@+id/verify_btn_verify"
+                    android:nextFocusUp="@+id/verify_tv_resend_code"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="@string/verify_contact_us"
+                    android:textColor="#337ab7"
+                    android:textSize="@dimen/label_font_size"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/verify_tv_contact_us"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/verify_btn_contact_us"
+                    android:paddingRight="10dp"
+                    android:text="@string/verify_contact_us_description"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/verify_btn_verify"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/register_button_height"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/button_background_blue"
+                android:elevation="5dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:nextFocusDown="@+id/verify_edit_code"
+                android:nextFocusUp="@+id/verify_tv_contact_us"
+                android:padding="10dp"
+                android:text="@string/verify_active_code"
+                android:textColor="@color/button_font_color"
+                android:textSize="@dimen/label_font_size"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

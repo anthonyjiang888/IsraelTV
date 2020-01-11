@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/totalview_child_load_recordlist"
+    android:baselineAligned="false"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:duplicateParentState="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.71"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="right"
+                android:id="@+id/description">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right|center_vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_schedule_epg_time_child_load_recordlist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:gravity="right|center_vertical"
+                        android:textSize="17sp"
+                        android:textColor="@color/white"
+                        android:text="14:20"
+                        android:textStyle="bold"/>
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/watch_white"
+                        android:focusable="false"/>
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:id="@+id/tv_schedule_epg_title_child_load_recordlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/white"
+                    android:gravity="right"
+                    android:text="Title"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_schedule_epg_description_child_load_recordlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:textSize="15sp"
+                    android:ellipsize="end"
+                    android:textColor="@color/white"
+                    android:text="Description" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="3dp"
+                android:gravity="right|center_vertical"
+                android:layout_below="@+id/description"
+                android:weightSum="3"
+                >
+
+
+                <TextView
+                    android:id="@+id/tv_schedule_epg_duration_child_load_recordlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Duration"
+                    android:gravity="right|center"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:singleLine="true"/>
+
+
+                <!--  <View
+                      android:layout_width="1dp"
+                      android:layout_height="15dp"
+                      android:layout_marginStart="5dp"
+                      android:layout_marginEnd="5dp"
+                      android:background="#fff" />-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    >
+
+                    <RatingBar
+                        android:id="@+id/ratingBar_child_load_recordlist"
+                        style="?attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:max="5"
+                        android:rating="5"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        android:layout_gravity="right"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:text="דירוג:"
+                        android:textColor="#fff"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:layout_marginLeft="15dp"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_schedule_epg_gener_child_load_recordlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="gener"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="right|center"
+                    android:textSize="14sp"
+                    android:singleLine="true"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.29"
+            android:layout_height="match_parent">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:id="@+id/thumbnail_image_child_load_recordlist"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/channel_placeholder"
+                android:focusable="false"
+                android:adjustViewBounds="true"
+                app:riv_border_width="1dp"
+                app:riv_corner_radius="10dip"
+                app:riv_mutate_background="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:textColor="#FFF"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:background="#95000000"
+                android:id="@+id/text_play_child_load_recordlist"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:background="@drawable/button_focused_livechannel"
+                android:id="@+id/play_button_child_load_recordlist"/>
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/main_cat_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="right"
+        android:text="שם קטגוריה"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-5dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/channelname_vod_tvshow_videoplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:paddingRight="6dp"
+                    android:paddingTop="0dp"
+                    android:text="שם תוכנית הטלוויזיה"
+                    android:textColor="#fff"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/description_vod_tvshow_videoplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:paddingRight="6dp"
+                    android:text="פרטים על הצג"
+                    android:textColor="#fff"
+                    android:textSize="17sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/up_arrow_show"
+                            android:layout_width="30dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="6dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/up_arrow_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ratingRowLinearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn_episodelist_up_down"
+                                android:layout_width="195dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginTop="2dp"
+                                android:background="@drawable/sort_button_bg"
+                                android:drawableLeft="@drawable/up_arrow_espisode"
+                                android:nextFocusDown="@id/gridview_tv_show"
+                                android:focusable="true"
+                                android:gravity="center"
+                                android:nextFocusRight="@+id/add_to_fav_tvshow"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="3dp"
+                                android:singleLine="true"
+                                android:text="מהחדש לישן"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="left"
+                                android:focusable="false"
+                                android:gravity="right|center"
+                                android:text="סדר לפי:"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <RatingBar
+                            android:id="@+id/ratingBar_vod_tvshow_videoplay"
+                            style="?attr/ratingBarStyleIndicator"
+                            android:layout_width="176dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:focusable="false"
+                            android:max="5"
+                            android:rating="3.5"
+                            android:scaleX="0.65"
+                            android:scaleY="0.65"
+                            android:theme="@style/RatingBar"
+
+                            />
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="3dp"
+                            android:background="#fff"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/genre_vod_tvshow_videoplay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center|right"
+                            android:singleLine="true"
+                            android:text="Gener"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <!--  android:text="פרטים על הצג"-->
+
+
+                <LinearLayout
+                    android:id="@+id/llay_holder_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <israel13.androidtv.Utils.CustomGridView
+                        android:id="@+id/gridview_tv_show"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:focusable="true"
+                        android:layoutDirection="rtl"
+                        android:listSelector="@color/transparent"
+                        android:nextFocusRight="@+id/Select_season"
+                        android:nextFocusLeft="@+id/gridview_tv_show"
+                        android:scrollbarStyle="outsideInset"
+                        android:scrollbarThumbVertical="@drawable/custom_scroll_style"
+                        android:verticalScrollbarPosition="right"/>
+
+                    <ImageView
+                        android:id="@+id/down_arrow_show"
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/down_arrow_background"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/channel_icon_vod_tvshow_videoplay"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/club1"
+                app:riv_border_width="1dp"
+                app:riv_corner_radius="10dip"
+                app:riv_mutate_background="true"
+
+                />
+
+            <ImageView
+                android:id="@+id/back_tv_show"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/sort_button_bg"
+                android:focusable="true"
+                android:gravity="center"
+                android:nextFocusLeft="@+id/list_recording_show"
+                android:paddingBottom="5dp"
+                android:paddingLeft="75dp"
+                android:paddingRight="75dp"
+                android:paddingTop="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/record_back" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/add_to_fav_tvshow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selected_season"
+                    android:focusable="true"
+                    android:nextFocusDown="@+id/Select_season"
+                    android:orientation="horizontal"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="2dp">
+
+                    <TextView
+                        android:id="@+id/add_fav_episode_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:gravity="center"
+                        android:text="הוסף למועדפים"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/add_To_fav_img_episode"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:src="@drawable/add_fav" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/img_tvshowlist_uparrow_channels"
+                    android:layout_width="30dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+
+                    android:clickable="true"
+                    android:src="@drawable/up_arrow_background"
+                    android:visibility="invisible" />
+
+                <ListView
+                    android:id="@+id/Select_season"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/img_tvshowlist_downarrow_channels"
+                    android:layout_below="@+id/img_tvshowlist_uparrow_channels"
+                    android:choiceMode="singleChoice"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="5dp"
+                    android:listSelector="@color/transparent"
+                    android:nextFocusLeft="@+id/gridview_tv_show"
+                    android:scrollbarStyle="insideInset" />
+
+                <ImageView
+                    android:id="@+id/img_tvshowlist_downarrow_channels"
+                    android:layout_width="30dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+
+                    android:clickable="true"
+                    android:src="@drawable/down_arrow_background"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

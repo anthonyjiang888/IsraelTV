@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Common-->
+    <dimen name="scrollview_vert_margin">20dp</dimen>
+    <dimen name="scrollview_horz_margin">40dp</dimen>
+
+    <dimen name="main_container_vert_margin">20dp</dimen>
+    <dimen name="main_container_horz_margin">20dp</dimen>
+
+    <!--Common.Font-->
+    <dimen name="title_font_size">24sp</dimen>
+    <dimen name="label_font_size">18sp</dimen>
+    <dimen name="edittext_font_size">18sp</dimen>
+    <dimen name="explain_font_size">14sp</dimen>
+    <dimen name="hint_font_size">14sp</dimen>
+
+    <!--Font.Register-->
+    <dimen name="register_group_title_font_size">20sp</dimen>
+
+    <!--Control-->
+    <dimen name="register_label_width">250dp</dimen>
+    <dimen name="register_edittext_height">40dp</dimen>
+    <dimen name="register_edittext_padding">10dp</dimen>
+    <dimen name="register_control_edit_padding_left">30dp</dimen>
+    <dimen name="register_row_space">20dp</dimen>
+    <dimen name="register_optional_top_margin">20dp</dimen>
+    <dimen name="register_optional_inner_margin">10dp</dimen>
+    <dimen name="register_hint_button_width">90dp</dimen>
+    <dimen name="register_code_button_width">120dp</dimen>
+    <dimen name="register_code_button_height">40dp</dimen>
+    <dimen name="register_spinner_margin_left">0dp</dimen>
+    <dimen name="register_spinner_margin_top">0dp</dimen>
+    <dimen name="register_show_password_button_height">40dp</dimen>
+    <dimen name="register_show_password_button_margin_left">0dp</dimen>
+    <dimen name="register_show_password_button_margin_top">0dp</dimen>
+    <dimen name="register_get_capture_code_button_width">40dp</dimen>
+    <dimen name="register_get_capture_code_button_height">40dp</dimen>
+    <dimen name="register_button_height">60dp</dimen>
+
+    <dimen name="keyboard_textsize">30sp</dimen>
+    <dimen name="keyboard_marginright">5dp</dimen>
+
+</resources>

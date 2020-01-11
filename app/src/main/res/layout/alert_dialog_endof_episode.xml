@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="500px"
+    android:layout_height="500px"
+    android:gravity="center"
+    android:background="@drawable/alert_dialog_bg">
+    <TextView
+        android:id="@+id/txt_confirm_transition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        android:focusable="false"
+        android:textSize="18sp"
+        android:text="@string/episode_playnext_or_not"/>
+
+    <FrameLayout
+        android:id="@+id/framelayout_next_episode"
+        android:layout_width="350px"
+        android:layout_height="300px"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_bg1"
+        android:nextFocusDown="@+id/but_transition_cancel"
+        android:focusable="true"
+        android:clickable="true"
+        android:padding="10px">
+
+        <!--<Button-->
+            <!--android:id="@+id/framelayout_button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:nextFocusDown="@+id/but_transition_cancel"-->
+            <!--android:background="#00FFFFFF">-->
+        <!--</Button>-->
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_next_episode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/club1"
+            android:focusable="false"
+            android:adjustViewBounds="true"
+            app:riv_border_width="1dp"
+            app:riv_corner_radius="10dip"
+            app:riv_mutate_background="true"
+            />
+
+        <TextView
+            android:id="@+id/txt_next_episode_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:visibility="visible"
+            android:layout_gravity="bottom"
+            android:background="@drawable/item_textview_background"
+            android:text="Episode Name"
+            android:gravity="center"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:layoutDirection="rtl"
+            android:textStyle="bold"
+            android:focusable="false"
+            />
+
+        <ImageView
+            android:id="@+id/play_button_vod_tvshow_videoplay"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:background="@drawable/button_focused_livechannel"
+            android:focusable="false"
+            />
+
+    </FrameLayout>
+    <Button
+        android:id="@+id/but_transition_cancel"
+        android:layout_width="330px"
+        android:layout_height="55px"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:nextFocusUp="@+id/framelayout_next_episode"
+        android:text="@string/episode_playstop"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:background="@drawable/button_bg_next_episode"/>
+</LinearLayout>

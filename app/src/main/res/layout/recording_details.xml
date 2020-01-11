@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:animateLayoutChanges="true"
+              android:clickable="true"
+              android:background="@drawable/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.67"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_nodata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:nextFocusRight="@+id/list_date_recording"
+                    android:padding="5dp"
+                    android:text="אין נתונים זמינים"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/llv_list_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/up_arrow_recording_show"
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/up_arrow_background"
+                        android:visibility="invisible"/>
+
+                    <ListView
+                        android:id="@+id/list_recording_show"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:listSelector="@drawable/custom_bg1"
+                        android:nextFocusRight="@+id/list_date_recording"
+                        android:nextFocusDown="@+id/list_recording_show"
+                        android:paddingEnd="2dp"
+                        android:scrollbarStyle="outsideInset"
+                        android:scrollbarThumbVertical="@drawable/custom_scroll_style"></ListView>
+
+                    <ImageView
+                        android:id="@+id/down_arrow_recording_show"
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/down_arrow_background"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:paddingBottom="13dp">
+
+                    <TextView
+                        android:id="@+id/channelname_load_recordlist"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingRight="5dp"
+                        android:text="Channe Name"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/channel_icon_load_recordlist"
+                        android:layout_width="180px"
+                        android:layout_height="180px"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"
+                        android:adjustViewBounds="true"
+                        android:focusable="true"
+                        android:src="@drawable/channel_placeholder"
+                        app:riv_border_width="1dp"
+                        app:riv_corner_radius="10dip"
+                        app:riv_mutate_background="true"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+                    <ImageView
+                        android:id="@+id/back_record"
+                        android:layout_width="180px"
+                        android:layout_height="65px"
+                        android:background="@drawable/sort_button_bg"
+                        android:focusable="false"
+                        android:scaleType="fitXY"
+                        android:gravity="center"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="7dp"
+                        android:paddingRight="50px"
+                        android:paddingLeft="50px"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="3dp"
+                        android:nextFocusLeft="@+id/list_recording_show"
+                        android:nextFocusDown="@+id/list_date_recording"
+                        android:src="@drawable/record_back"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/up_arrow_recording_date"
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/up_arrow_background"
+                        android:visibility="invisible"/>
+
+                    <ListView
+                        android:id="@+id/list_date_recording"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="0dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:choiceMode="singleChoice"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbarThumbVertical="@drawable/custom_scroll_style"
+                        android:listSelector="@color/transparent"
+                        android:nextFocusLeft="@+id/list_recording_show"
+                        android:nextFocusRight="@+id/list_date_recording">
+                    </ListView>
+
+                    <ImageView
+                        android:id="@+id/down_arrow_recording_date"
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/down_arrow_background"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

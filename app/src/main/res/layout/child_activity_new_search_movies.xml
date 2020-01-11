@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/totalview_child_new_search_movies"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:clickable="true"
+    android:focusable="true" >
+
+    <RelativeLayout
+        android:id="@+id/relative_lay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8px"
+        android:background="@drawable/custom_bg1"
+        android:duplicateParentState="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/image_child_new_search_movies"
+            android:layout_width="350px"
+            android:layout_height="400px"
+            android:scaleType="fitXY"
+            android:src="@drawable/club1"
+            android:adjustViewBounds="true"
+            app:riv_border_width="1dp"
+            app:riv_corner_radius="10dip"
+            app:riv_mutate_background="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/item_textview_background"
+            android:layout_alignBottom="@+id/image_child_new_search_movies"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/movie_name_child_new_search_movies"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="2dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Name"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layoutDirection="rtl"/>
+
+            <RelativeLayout
+                android:id="@+id/layout_search_movie_container_yearAstar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_search_movie_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ratingBar_movie_star"
+                    android:padding="2dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:textDirection="ltr"
+                    android:text="Year"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar_search_movie_star"
+                    style="?attr/ratingBarStyleSmall"
+                    android:theme="@style/RatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:max="5"
+                    android:rating="5"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/play_button_child_new_search_movies"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_focused_livechannel"
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

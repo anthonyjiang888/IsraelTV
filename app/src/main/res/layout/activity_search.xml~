@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootview">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:textColor="#FFF"
+            android:text="אנא בחר היכן לחפש"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"/>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="150dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sort_button_bg"
+                android:padding="10dp"
+                android:text="חפש"
+                android:id="@+id/search_button"
+                android:singleLine="true"
+                android:textSize="17sp"
+                android:layout_marginRight="15dp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="0.30"
+                android:layout_gravity="center"
+                android:focusable="true"
+                android:nextFocusUp="@+id/live_search"
+                android:nextFocusRight="@+id/edit_text_search"
+
+                />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="50dp"
+            android:id="@+id/edit_text_search"
+            android:gravity="right|center_vertical"
+            android:inputType="text"
+            android:background="@drawable/edit_search"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:layout_margin="0dp"
+            android:layout_weight="0.70"
+            android:textSize="17sp"
+            android:focusable="true"
+            android:nextFocusRight="@+id/search_button"
+            android:hint="@string/hints_search"
+            android:textColorHint="#848484"
+            android:imeOptions="actionSearch"
+            android:text="@string/record4"
+            />
+
+
+
+</LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_marginTop="25dp"
+           >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/container_live_tv_search"
+                android:visibility="gone">
+        <TextView
+            android:id="@+id/live_tv_numberof_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5b5b5b"
+            android:gravity="right|center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:visibility="visible"
+            android:text="Live tv view"
+            android:textColor="#FFF"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/live_tv_new_search_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:visibility="visible"
+            android:layout_gravity="right"/>
+
+        <TextView
+            android:id="@+id/live_tv_numberof_no_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:padding="5dp"
+            android:textColor="#FFF"
+            android:textSize="17sp"
+            android:visibility="gone"
+            />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/container_record_search"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/record_number_of_Results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="visible"
+                    android:background="#5b5b5b"
+                    android:gravity="right|center"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="15dp"
+                    android:text="Record view"
+                    android:textColor="#FFF"
+                    android:textSize="17sp"
+                    android:focusable="false"
+                    android:textStyle="bold"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/record_new_search_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/record_child_new_search_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:layout_margin="15dp"
+                    android:layout_gravity="right"/>
+
+                <TextView
+                    android:id="@+id/record_number_of_no_Results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:padding="5dp"
+                    android:textColor="#FFF"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/container_tv_show_search"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/tvshow_number_of_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#5b5b5b"
+                    android:visibility="visible"
+                    android:gravity="right"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:text="Tv show view"
+                    android:textColor="#FFF"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+
+
+                <israeltv.com.israeltv_android_tv.Utils.NonscrollRecylerview
+                    android:id="@+id/tvshow_new_search_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_gravity="right"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvshow_number_of_no_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:padding="5dp"
+                    android:textColor="#FFF"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/container_movies_search"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/movies_number_of_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#5b5b5b"
+                    android:gravity="right"
+                    android:visibility="visible"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:text="Movies view"
+                    android:textColor="#FFF"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+
+
+                <israeltv.com.israeltv_android_tv.Utils.NonscrollRecylerview
+                    android:id="@+id/movies_new_search_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_gravity="end"/>
+
+
+                <TextView
+                    android:id="@+id/movies_number_of_no_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:padding="5dp"
+                    android:textColor="#FFF"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/container_radio_search"
+                android:visibility="gone">
+            <TextView
+                android:id="@+id/radio_number_of_results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5b5b5b"
+                android:gravity="right|center"
+                android:visibility="visible"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:text="Radio view"
+                android:textColor="#FFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/radio_new_search_recyclerview"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:visibility="visible"
+                android:layout_gravity="end"
+                android:scrollingCache="true"
+                android:smoothScrollbar="true"
+                android:focusable="false"/>
+
+            <TextView
+                android:id="@+id/radio_number_of_no_results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:padding="5dp"
+                android:text="Radio view"
+                android:textColor="#FFF"
+                android:textSize="17sp"
+                android:visibility="gone" />
+                </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

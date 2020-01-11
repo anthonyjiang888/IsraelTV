@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <!-- <item android:state_activated="true" android:state_focused="true"  android:drawable="@drawable/edittext_focus"
+         android:textColor="@color/black"/>
+     <item android:state_selected="true" android:state_focused="true"  android:drawable="@drawable/edittext_focus"
+         android:textColor="@color/black"/>
+     <item android:drawable="@drawable/login_edittext" />-->
+
+    <item android:drawable="@drawable/edittext_focus"
+          android:state_pressed="true"/> <!-- pressed -->
+    <item android:drawable="@drawable/edittext_focus"
+          android:state_focused="true"/> <!-- focused -->
+    <item android:drawable="@drawable/login_edittext"/> <!-- default -->
+
+</selector>

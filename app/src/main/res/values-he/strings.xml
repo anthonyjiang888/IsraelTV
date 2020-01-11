@@ -1,0 +1,369 @@
+<resources>
+    <string name="app_name">IsraelTV</string>
+    <!--<string name="app_id">4F8B3483</string>
+    <string name="app_id_new">CC1AD845</string>-->
+    <string name="title_activity_login">Login</string>
+    <string name="email"> דוא״ל </string>
+    <string name="password">סיסמה</string>
+
+    <!--Error String-->
+
+    <string name="enter_email">הכנס דוא"ל</string>
+    <string name="enter_password">הכנס סיסמה</string>
+    <string name="enter_userid">הזן מזהה משתמש</string>
+
+    <string name="hints_email"><i>Email address</i></string>
+    <string name="hints_password"><i>Password</i></string>
+    <string name="hints_search">הקלד כאן מילות חיפוש...</string>
+    <string name="vod">ארץ נהדרת</string>
+    <string name="record1">אורלי וגיא</string>
+    <string name="record2">פסקול</string>
+    <string name="record3">פותחים שישי </string>
+    <string name="record4">חדשות</string>
+    <string name="record5">שמש</string>
+
+    <!--Login , Register, Activation Activities -->
+    <string name="login">התחברות</string>
+    <string name="login_register_user">הרשמה ללקוחות חדשים</string>
+    <string name="login_forgot_password">איפוס סיסמה</string>
+    <string name="login_device_id">מספר סריאלי</string>
+
+    <string name="register_title">הרשמה ללקוחות חדשים</string>
+    <string name="register_name">שם מלא</string>
+    <string name="register_email">דואר אלקטרוני</string>
+    <string name="register_email_explain">אם הוזמנת ע"י חבר דרך עמוד "הזמן חבר" הקלד כאן את קוד ההזמנה שקיבלת</string>
+    <string name="register_email_verification">הזן שוב כתובת דואר אלקטרוני</string>
+    <string name="register_password">סיסמה</string>
+    <string name="register_confirm_password">אימות סיסמה</string>
+    <string name="register_reenter_password">אימות סיסמה</string>
+    <string name="register_show_password">הצג סיסמה</string>
+    <string name="register_hide_password">הסתר סיסמה</string>
+    <string name="register_phone">טלפון</string>
+    <string name="register_chapture_code">קוד אימות</string>
+    <string name="register_chapture_code_decription">הכנס ברצף את קוד האימות משמאל לימין</string>
+    <string name="register_referral_code_title">אופציונאלי - לא חובה</string>
+    <string name="register_referral_code">קוד הזמנה</string>
+    <string name="register_referral_code_explain">אם הוזמנת ע"י חבר דרך עמוד "הזמן חבר" הקלד כאן את קוד ההזמנה שקיבלת</string>
+    <string name="register_join_us">המשך</string>
+
+    <!--VerifyCode Activity-->
+    <string name="verify_title"> אימות חשבון</string>
+    <string name="verify_description">אנא בדוק את האימייל ואמת את הקוד שקיבלת. קוד אימות חשבון נשלח לכתובת אימייל</string>
+    <string name="verify_code">קוד אימות חשבון</string>
+    <string name="verify_resend_code"><u>לא קיבלתי קוד, שלח שוב</u></string>
+    <string name="verify_resend_count_left">&#160;פעמים)</string>
+    <string name="verify_resend_count_right">(נשלח&#160;</string>
+    <string name="verify_contact_us_description">אם הינך מצליח לקבל קוד אימות חשבון לאימייל אנא צור איתנו קשר באתר בכתובת: israel.tv</string>
+    <string name="verify_contact_us">צור קשר</string>
+    <string name="verify_active_code">אמת חשבון כעת</string>
+
+    <!--Messages-->
+    <string name="login_error_11302">דוא"ל או סיסמה שגויים</string>
+    <string name="login_with_interactive_user">Login with inactive user</string>
+    <string name="account_not_exists">Account not exists</string>
+    <string name="login_successfull">ההתחברות בוצעה בהצלחה</string>
+
+    <string name="reset_password_success">סיסמה חדשה נשלחה לכתובת אימייל</string>
+    <string name="reset_password_error_11008">asked up 10 times forget password</string>
+    <string name="reset_password_error_11009">כתובת האימייל שהוזן אינו קיים במערכת</string>
+
+    <string name="register_required_error">שדה חובה</string>
+    <string name="register_name_filter_error">שם מלא צריך להכיל אותיות בעברית או באנגלית בלבד</string>
+    <string name="register_email_filter_error">כתובת המייל שגויה</string>
+    <string name="register_email_equalto_error">אימות אימייל אינו תואם את האיימיל שרשמת</string>
+    <string name="register_password_filter_error"> סיסמה צריכה להכיל אותיות באנגלית/מספרים בלבד</string>
+    <string name="register_password_length_error">סיסמה צריכה להכיל לפחות 4 אותיות/מספרים ומעלה</string>
+    <string name="register_password_equalto_error">סיסמת אימות אינה תואמת את הסיסמה שרשמת</string>
+    <string name="register_phone_length_error">מספר הטלפון שהכנסת קצר מידי</string>
+    <string name="register_phone_filter_error">שדה זה צריך להכיל מספרים בלבד</string>
+
+    <string name="registration_success">ההתחברות בוצעה בהצלחה</string>
+    <string name="registration_error_11000_401">שם מלא צריך להכיל אותיות בעברית או באנגלית בלבד</string>
+    <string name="registration_error_11000_402">שם משתמש צריך להכיל אותיות באנגלית ומספרים בלבד</string>
+    <string name="registration_error_11000_403">שם משתמש צריך להכיל לפחות 3 אותיות ומעלה</string>
+    <string name="registration_error_11000_404">כתובת המייל שגויה</string>
+    <string name="registration_error_11000_405">שדה זה צריך להכיל מספרים בלבד</string>
+    <string name="registration_error_11000_406">מספר הטלפון שהכנסת קצר מידי</string>
+    <string name="registration_error_11000_407"> סיסמה צריכה להכיל אותיות באנגלית/מספרים בלבד</string>
+    <string name="registration_error_11000_408">סיסמה צריכה להכיל לפחות 4 אותיות/מספרים ומעלה</string>
+    <string name="registration_error_11000_409">סיסמת אימות אינה תואמת את הסיסמה שרשמת</string>
+    <string name="registration_error_11000_421">קוד הזמנה שגוי</string>
+    <string name="registration_error_58403">לא ניתן להירשם דרך כתובת אייפי זו</string>
+    <string name="registration_error_11111">Register closed</string>
+    <string name="registration_error_11112">שם משתמש תפוס. אנא בחר שם משתמש אחר</string>
+    <string name="registration_error_11113">שגיאה: כתובת המייל כבר בשימוש</string>
+    <string name="registration_error_11114">הסיסמה צריכה יותר מ 4 תווים</string>
+    <string name="registration_error_11007">קוד האימות שהכנסת שגוי</string>
+    <string name="registration_error_11017">אימייל לא יכול לשלוח, בבקשה לבדוק את כתובת הדוא"ל לאמת או לא!</string>
+    <string name="registration_error_other">Some exception error occured</string>
+    <string name="registration_error_exception">Some exception error occured</string>
+    <string name="registration_error_unknown">Unknown error</string>
+    <string name="registration_no_capture_code_image">Network is not  connected.</string>
+    <string name="register_error_msg_title">הודעה</string>
+    <string name="register_error_msg">לא ניתן להירשם. אנא צור איתנו קשר באתר בכתובת: israel.tv</string>
+
+    <string name="verify_error_code_empty">שדה חובה</string>
+    <string name="verify_error_other">some error occured</string>
+    <string name="verify_error_0">הקוד נשלח שוב כבקשתך</string>
+    <string name="verify_error_58117">קוד הפעלה לא חוקי</string>
+    <string name="verify_error_58118">send active email again,no this email user</string>
+    <string name="verify_error_58119">send active email again,actived already</string>
+    <string name="verify_error_58120">send active email again,send active email problem.</string>
+    <string name="verify_success">ההתחברות בוצעה בהצלחה</string>
+
+    <string name="episode_playnext_or_not">לנגן את הפרק הבא?</string>
+    <string name="episode_playstop">יציאה</string>
+    <string name="speedtest_progress_text">בטעינה...</string>
+    <!--keyboard-->
+    <string name="Alef">א‬‬‬</string>
+    <string name="Bet">ב</string>
+    <string name="Gimel">ג</string>
+    <string name="Dalet">ד</string>
+    <string name="He">ה</string>
+    <string name="Vav">ו</string>
+    <string name="Zayin">ז</string>
+    <string name="Het">ח</string>
+    <string name="Tet">ט</string>
+    <string name="Yod">י</string>
+    <string name="Kaf">כ</string>
+    <string name="Lamed">ל</string>
+    <string name="Mem">מ</string>
+    <string name="Nun">נ</string>
+    <string name="Samekh">ס</string>
+    <string name="Ayin">ע</string>
+    <string name="Pe">פ</string>
+    <string name="Tsadi">צ</string>
+    <string name="Qof">ק</string>
+    <string name="Resh">ר</string>
+    <string name="Shin">ש</string>
+    <string name="NunSofit">ן</string>
+    <string name="MemSofit">ם</string>
+    <string name="Koof">ך</string>
+    <string name="PeSofit">ף</string>
+    <string name="TsadiSofit">ץ</string>
+    <string name="Tav">ת</string>
+    <string name="submit">חפש</string>
+    <string name="OwnIMESpace"></string>
+
+    <string-array name="CountryCodes" >
+        <item>af,+93,Afghanistan</item>
+        <item>al,+355,Albania</item>
+        <item>dz,+213,Algeria</item>
+        <item>as,+1684,American Samoa</item>
+        <item>ad,+376,Andorra</item>
+        <item>ao,+244,Angola</item>
+        <item>ai,+1264,Anguilla</item>
+        <item>ag,+1268,Antigua and Barbuda</item>
+        <item>ar,+54,Argentina</item>
+        <item>am,+374,Armenia</item>
+        <item>aw,+297,Aruba</item>
+        <item>au,+61,Australia</item>
+        <item>at,+43,Austria</item>
+        <item>az,+994,Azerbaijan</item>
+        <item>bs,+1242,Bahamas</item>
+        <item>bh,+973,Bahrain</item>
+        <item>bd,+880,Bangladesh</item>
+        <item>bb,+1246,Barbados</item>
+        <item>by,+375,Belarus</item>
+        <item>be,+32,Belgium</item>
+        <item>bz,+501,Belize</item>
+        <item>bj,+229,Benin</item>
+        <item>bm,+1441,Bermuda</item>
+        <item>bt,+975,Bhutan</item>
+        <item>bo,+591,Bolivia</item>
+        <item>ba,+387,Bosnia and Herzegovina</item>
+        <item>bw,+267,Botswana</item>
+        <item>br,+55,Brazil</item>
+        <item>vg,+1284,British Virgin Islands</item>
+        <item>bn,+673,Brunei</item>
+        <item>bg,+359,Bulgaria</item>
+        <item>bf,+226,Burkina Faso</item>
+        <item>bi,+257,Burundi</item>
+        <item>kh,+855,Cambodia</item>
+        <item>cm,+237,Cameroon</item>
+        <item>ca,+1,Canada</item>
+        <item>cv,+238,Cape Verde</item>
+        <item>ky,+1345,Cayman Islands</item>
+        <item>cf,+236,Central African Republic</item>
+        <item>td,+235,Chad</item>
+        <item>cl,+56,Chile</item>
+        <item>cn,+86,China</item>
+        <item>co,+57,Colombia</item>
+        <item>km,+269,Comoros</item>
+        <item>cd,+243,Congo</item>
+        <item>cg,+242,Congo</item>
+        <item>ck,+682,Cook Islands</item>
+        <item>cr,+506,Costa Rica</item>
+        <item>ci,+225,Côte d’Ivoire</item>
+        <item>hr,+385,Croatia</item>
+        <item>cu,+53,Cuba</item>
+        <item>cy,+357,Cyprus</item>
+        <item>cz,+420,Czech Republic</item>
+        <item>dk,+45,Denmark</item>
+        <item>dj,+253,Djibouti</item>
+        <item>dm,+1767,Dominica</item>
+        <item>do,+1809,Dominican Republic</item>
+        <item>ec,+593,Ecuador</item>
+        <item>eg,+20,Egypt</item>
+        <item>sv,+503,El Salvador</item>
+        <item>gq,+240,Equatorial Guinea</item>
+        <item>er,+291,Eritrea</item>
+        <item>ee,+372,Estonia</item>
+        <item>et,+251,Ethiopia</item>
+        <item>fo,+298,Faroe Islands</item>
+        <item>fj,+679,Fiji</item>
+        <item>fi,+358,Finland</item>
+        <item>fr,+33,France</item>
+        <item>pf,+689,French Polynesia</item>
+        <item>ga,+241,Gabon</item>
+        <item>gm,+220,Gambia</item>
+        <item>ge,+995,Georgia</item>
+        <item>de,+49,Germany</item>
+        <item>gh,+233,Ghana</item>
+        <item>gi,+350,Gibraltar</item>
+        <item>gr,+30,Greece</item>
+        <item>gl,+299,Greenland</item>
+        <item>gd,+1473,Grenada</item>
+        <item>gp,+590,Guadeloupe</item>
+        <item>gu,+1671,Guam</item>
+        <item>gt,+502,Guatemala</item>
+        <item>gg,+44,Guernsey</item>
+        <item>gn,+224,Guinea</item>
+        <item>gw,+245,Guinea-Bissau</item>
+        <item>gy,+592,Guyana</item>
+        <item>ht,+509,Haiti</item>
+        <item>hn,+504,Honduras</item>
+        <item>hk,+852,Hong Kong</item>
+        <item>hu,+36,Hungary</item>
+        <item>is,+354,Iceland</item>
+        <item>in,+91,India</item>
+        <item>id,+62,Indonesia</item>
+        <item>ir,+98,Iran</item>
+        <item>iq,+964,Iraq</item>
+        <item>ie,+353,Ireland</item>
+        <item>im,+44,Isle of Man</item>
+        <item>il,+972,Israel</item>
+        <item>it,+39,Italy</item>
+        <item>jm,+1876,Jamaica</item>
+        <item>jp,+81,Japan</item>
+        <item>je,+44,Jersey</item>
+        <item>jo,+962,Jordan</item>
+        <item>kz,+7,Kazakhstan</item>
+        <item>ke,+254,Kenya</item>
+        <item>ki,+686,Kiribati</item>
+        <item>kw,+965,Kuwait</item>
+        <item>kg,+996,Kyrgyzstan</item>
+        <item>la,+856,Laos</item>
+        <item>lv,+371,Latvia</item>
+        <item>lb,+961,Lebanon</item>
+        <item>ls,+266,Lesotho</item>
+        <item>lr,+231,Liberia</item>
+        <item>ly,+218,Libya</item>
+        <item>li,+423,Liechtenstein</item>
+        <item>lt,+370,Lithuania</item>
+        <item>lu,+352,Luxembourg</item>
+        <item>mo,+853,Macau</item>
+        <item>mk,+389,Macedonia</item>
+        <item>mg,+261,Madagascar</item>
+        <item>mw,+265,Malawi</item>
+        <item>my,+60,Malaysia</item>
+        <item>mv,+960,Maldives</item>
+        <item>ml,+223,Mali</item>
+        <item>mt,+356,Malta</item>
+        <item>mh,+692,Marshall Islands</item>
+        <item>mq,+596,Martinique</item>
+        <item>mr,+222,Mauritania</item>
+        <item>mu,+230,Mauritius</item>
+        <item>mx,+52,Mexico</item>
+        <item>fm,+691,Micronesia</item>
+        <item>md,+373,Moldova</item>
+        <item>mc,+377,Monaco</item>
+        <item>mn,+976,Mongolia</item>
+        <item>me,+382,Montenegro</item>
+        <item>ms,+1664,Montserrat</item>
+        <item>ma,+212,Morocco</item>
+        <item>mz,+258,Mozambique</item>
+        <item>mm,+95,Myanmar</item>
+        <item>na,+264,Namibia</item>
+        <item>nr,+674,Nauru</item>
+        <item>np,+977,Nepal</item>
+        <item>nl,+31,Netherlands</item>
+        <item>nc,+687,New Caledonia</item>
+        <item>nz,+64,New Zealand</item>
+        <item>ni,+505,Nicaragua</item>
+        <item>ne,+227,Niger</item>
+        <item>ng,+234,Nigeria</item>
+        <item>no,+47,Norway</item>
+        <item>om,+968,Oman</item>
+        <item>pk,+92,Pakistan</item>
+        <item>pw,+680,Palau</item>
+        <item>ps,+970,Palestine</item>
+        <item>pa,+507,Panama</item>
+        <item>pg,+675,Papua New Guinea</item>
+        <item>py,+595,Paraguay</item>
+        <item>pe,+51,Peru</item>
+        <item>ph,+63,Philippines</item>
+        <item>pl,+48,Poland</item>
+        <item>pt,+351,Portugal</item>
+        <item>pr,+1787,Puerto Rico</item>
+        <item>qa,+974,Qatar</item>
+        <item>re,+262,Réunion</item>
+        <item>ro,+40,Romania</item>
+        <item>ru,+7,Russia</item>
+        <item>rw,+250,Rwanda</item>
+        <item>kn,+1869,Saint Kitts and Nevis</item>
+        <item>lc,+1758,Saint Lucia</item>
+        <item>vc,+1784,Saint Vincent and the Grenadines</item>
+        <item>ws,+685,Samoa</item>
+        <item>sm,+378,San Marino</item>
+        <item>st,+239,São Tomé and Príncipe</item>
+        <item>sa,+966,Saudi Arabia</item>
+        <item>sn,+221,Senegal</item>
+        <item>rs,+381,Serbia</item>
+        <item>sc,+248,Seychelles</item>
+        <item>sl,+232,Sierra Leone</item>
+        <item>sg,+65,Singapore</item>
+        <item>sk,+421,Slovakia</item>
+        <item>si,+386,Slovenia</item>
+        <item>sb,+677,Solomon Islands</item>
+        <item>so,+252,Somalia</item>
+        <item>za,+27,South Africa</item>
+        <item>es,+34,Spain</item>
+        <item>lk,+94,Sri Lanka</item>
+        <item>sd,+249,Sudan</item>
+        <item>sr,+597,Suriname</item>
+        <item>sz,+268,Swaziland</item>
+        <item>se,+46,Sweden</item>
+        <item>ch,+41,Switzerland</item>
+        <item>sy,+963,Syria</item>
+        <item>tw,+886,Taiwan</item>
+        <item>tj,+992,Tajikistan</item>
+        <item>tz,+255,Tanzania</item>
+        <item>th,+66,Thailand</item>
+        <item>tl,+670,Timor-Leste</item>
+        <item>tg,+228,Togo</item>
+        <item>to,+676,Tonga</item>
+        <item>tt,+1868,Trinidad and Tobago</item>
+        <item>tn,+216,Tunisia</item>
+        <item>tr,+90,Turkey</item>
+        <item>tm,+993,Turkmenistan</item>
+        <item>tc,+1649,Turks and Caicos Islands</item>
+        <item>tv,+688,Tuvalu</item>
+        <item>ug,+256,Uganda</item>
+        <item>ua,+380,Ukraine</item>
+        <item>ae,+971,United Arab Emirates</item>
+        <item>gb,+44,United Kingdom</item>
+        <item>us,+1,United States</item>
+        <item>vi,+1340,U.S. Virgin Islands</item>
+        <item>uy,+598,Uruguay</item>
+        <item>uz,+998,Uzbekistan</item>
+        <item>vu,+678,Vanuatu</item>
+        <item>va,+379,Vatican City</item>
+        <item>ve,+58,Venezuela</item>
+        <item>vn,+84,Vietnam</item>
+        <item>eh,+212,Western Sahara</item>
+        <item>ye,+967,Yemen</item>
+        <item>zm,+260,Zambia</item>
+        <item>zw,+263,Zimbabwe</item>
+    </string-array>
+</resources>

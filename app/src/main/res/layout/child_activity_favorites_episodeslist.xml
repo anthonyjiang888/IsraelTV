@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/totalview_child_favorites_episodeslist"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center" >
+
+    <RelativeLayout
+        android:id="@+id/relative_lay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8px"
+
+        android:duplicateParentState="true"
+        android:background="@drawable/custom_bg1"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21px"
+        android:layout_marginBottom="21px"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/image_child_favorites_episodeslist"
+            android:layout_width="355px"
+            android:layout_height="300px"
+            android:adjustViewBounds="true"
+            android:focusable="false"
+            android:paddingStart="0dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            app:riv_border_width="1dp"
+            app:riv_corner_radius="10dip"
+            app:riv_mutate_background="true"/>
+
+        <TextView
+            android:id="@+id/name_child_favorites_episodeslist"
+            android:layout_width="355px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/item_textview_background"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Name"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_alignBottom="@id/image_child_favorites_episodeslist"
+            android:layoutDirection="rtl"/>
+    </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/linearlayout_close_favorites_episodelist"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="right|top"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/close_button_vod_tvshow_videoplay1"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/cross_red"
+                android:focusable="false" />
+        </LinearLayout>
+
+
+</FrameLayout>

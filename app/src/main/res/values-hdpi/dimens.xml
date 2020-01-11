@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="popup_padding">20dp</dimen>
+    <dimen name="popup_textsize">18sp</dimen>
+    <dimen name="popup_oksize">20sp</dimen>
+
+</resources>

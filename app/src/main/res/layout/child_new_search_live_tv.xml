@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/total_layout_child_live_search"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relative_lay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:duplicateParentState="true"
+        android:background="@drawable/custom_bg1">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/image_child_new_search_live"
+            android:layout_width="230px"
+            android:layout_height="230px"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/channel_placeholder"
+            app:riv_border_width="1dp"
+            app:riv_corner_radius="10dip"
+            app:riv_mutate_background="true" />
+        <LinearLayout
+            android:id="@+id/linear_layout_new_search_live_tv"
+            android:layout_width="230px"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/image_child_new_search_live"
+            android:layout_gravity="bottom"
+            android:background="@drawable/item_textview_background"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/time_child_new_search_live"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="09:00-10:20"
+                android:textColor="#fff"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/epg_title_child_new_search_live"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="false"
+                android:freezesText="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Show Name"
+                android:textColor="#fff"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:id="@+id/linear_layout_new_search_live_tv"-->
+            <!--android:layout_width="200px"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical" >-->
+    <!---->
+            <!--<TextView-->
+                <!--android:id="@+id/time_child_new_search_live"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="right"-->
+                <!--android:padding="5dp"-->
+                <!--android:textColor="#FFF"-->
+                <!--android:textSize="17sp" />-->
+    <!---->
+            <!--<TextView-->
+                <!--android:id="@+id/epg_title_child_new_search_live"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:ellipsize="marquee"-->
+                <!--android:gravity="center"-->
+                <!--android:marqueeRepeatLimit="marquee_forever"-->
+                <!--android:maxLines="2"-->
+                <!--android:minLines="2"-->
+                <!--android:padding="5dp"-->
+                <!--android:textColor="#FFF"-->
+                <!--android:textSize="17sp" />-->
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+
+</RelativeLayout>

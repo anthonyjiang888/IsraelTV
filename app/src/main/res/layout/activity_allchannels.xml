@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/layout_root_allchannels">
+    <ScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@drawable/bg"
+        android:descendantFocusability="blocksDescendants"
+        android:fillViewport="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:orientation="vertical"
+        android:id="@+id/allchannels_scroll">
+
+        <!--
+        <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+        -->
+
+
+        <!--
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="16sp"
+            android:padding="2dp"
+            android:layout_marginTop="0dp"
+            android:textColor="#FFF"
+            android:text="system message"
+            android:textStyle="bold"
+            android:id="@+id/system_msg"
+            />
+        -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#10ffffff"
+            android:orientation="vertical"
+            android:paddingTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/llay_system_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/system_msg_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="10dp"
+                    android:focusable="false"
+                    android:gravity="center_vertical|right"
+                    android:maxLines="1"
+                    android:text="test"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/system_msg_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="5dp"
+                    android:focusable="false"
+                    android:gravity="center_vertical|right"
+                    android:text="test"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/text_show_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llay_system_msg"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/sort_button_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:nextFocusDown="@+id/livetv_container"
+                android:paddingBottom="6dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="6dp"
+                android:text="לוח שידורים"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:id="@+id/livetv_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/text_show_guide"
+                android:layout_marginTop="-30dp"
+                android:layout_marginBottom="-8dp"
+                android:alwaysDrawnWithCache="true"
+                android:nextFocusUp="@+id/text_show_guide"
+                android:orientation="vertical"></LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>

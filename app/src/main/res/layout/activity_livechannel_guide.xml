@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:clickable="false"
+    android:layoutDirection="rtl"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_show_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:paddingBottom="6dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="6dp"
+        android:text="לוח שידורים"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/guidepage_layout_guide_detail"
+        android:layout_below="@+id/text_show_guide"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:paddingLeft="20dp">
+
+            <ImageView
+                android:id="@+id/img_uparrow_channels"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:src="@drawable/up_arrow_background"
+                android:visibility="visible" />
+
+            <ListView
+                android:id="@+id/listview_channels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/img_downarrow_channels"
+                android:layout_below="@+id/img_uparrow_channels"
+                android:focusable="true"
+                android:layoutDirection="ltr"
+                android:listSelector="@color/transparent"
+                android:scrollbarThumbVertical="@drawable/custom_scroll_style"
+                android:nextFocusLeft="@+id/listview_schedules"
+                android:nextFocusDown="@+id/listview_channels"/>
+
+            <TextView
+                android:id="@+id/guidpage_text_no_channel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="5dp"
+                android:text="אין נתונים זמינים"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/img_downarrow_channels"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:src="@drawable/down_arrow_background"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/img_channel_mark"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    app:riv_corner_radius="5dip"
+                    app:riv_mutate_background="true"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="2dp"/>
+                <TextView
+                    android:id="@+id/text_current_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Date"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_uparrow_schedules"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:src="@drawable/up_arrow_background"
+                android:visibility="visible" />
+
+            <ListView
+                android:id="@+id/listview_schedules"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/img_downarrow_schedules"
+                android:layout_below="@+id/img_uparrow_schedules"
+                android:divider="@drawable/divider_listview_guidepage_guide"
+                android:dividerHeight="5dp"
+                android:focusable="true"
+                android:layoutDirection="ltr"
+                android:paddingEnd="3dp"
+                android:scrollbarStyle="outsideInset"
+                android:scrollbarThumbVertical="@drawable/custom_scroll_style"
+                android:listSelector="@drawable/item_listview_guidepage_guide"
+                android:nextFocusRight="@+id/listview_channels"
+                android:nextFocusDown="@+id/listview_schedules"/>
+
+            <ImageView
+                android:id="@+id/img_downarrow_schedules"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:src="@drawable/down_arrow_background"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/guidpage_text_no_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="5dp"
+                android:text="אין נתונים זמינים"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/guidepage_guidelist_load_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/guidepage_layout_guide_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/img_channel"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/channel_placeholder"
+                app:riv_border_width="1dp"
+                app:riv_corner_radius="10dip"
+                app:riv_mutate_background="true" />
+
+            <LinearLayout
+                android:id="@+id/guidepage_layout_guide_timeAname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/img_channel"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/guidepage_text_guide_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/watch_white"
+                    android:paddingRight="10dp"
+                    android:text="12:25 - 13:40"
+                    android:textColor="@color/white"
+                    android:textDirection="ltr"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/guidepage_text_guide_timeAname_separator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toLeftOf="@+id/guidepage_text_guide_time"
+                    android:text="|"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/guidepage_text_guide_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/guidepage_text_guide_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/guidepage_layout_guide_timeAname"
+                android:layout_toEndOf="@+id/img_channel"
+                android:ellipsize="end"
+                android:paddingBottom="3dp"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:paddingTop="3dp"
+                android:text="Channel Description"
+                android:textColor="@color/white"
+                android:textDirection="rtl"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:paddingStart="90dp">
+
+            <TextView
+                android:id="@+id/guidepage_text_guide_topic_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="ז'אנר:"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/guidepage_text_guide_topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/guidepage_text_guide_topic_title"
+                android:paddingRight="10dp"
+                android:text="Topic"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layoutDirection="ltr">
+
+                <RatingBar
+                    android:id="@+id/guidepage_ratingbar_guide_rating"
+                    style="?attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:max="5"
+                    android:rating="5"
+                    android:scaleX="1.0"
+                    android:scaleY="1.0"
+                    android:theme="@style/RatingBar" />
+
+                <TextView
+                    android:id="@+id/guidepage_text_ratingbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="דירוג:"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/guidepage_text_guide_timelength_title"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/guidepage_text_guide_timelength"
+                android:text="זמן:"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/guidepage_text_guide_timelength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Duration"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

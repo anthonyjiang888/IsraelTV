@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#030303"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/scrollview_vert_margin"
+        android:layout_marginLeft="@dimen/scrollview_horz_margin"
+        android:layout_marginRight="@dimen/scrollview_horz_margin"
+        android:layout_marginTop="@dimen/scrollview_vert_margin"
+        android:background="@drawable/form_background_grey"
+        android:isScrollContainer="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_container_vert_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/register_title"
+                android:textColor="@color/label_font_color"
+                android:textSize="@dimen/title_font_size"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/border_color"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/form_row_color"
+                android:layoutDirection="rtl"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin">
+
+                <TextView
+                    android:id="@+id/register_tv_name"
+                    android:layout_width="@dimen/register_label_width"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/register_name"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <israel13.androidtv.Utils.CustomEditText
+                    android:id="@+id/register_edit_name"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/register_edittext_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/register_tv_name"
+                    android:background="@drawable/edit_background_blue"
+                    android:focusable="true"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/register_name"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/register_edit_email"
+                    android:nextFocusUp="@+id/register_btn_join_us"
+                    android:paddingLeft="@dimen/register_edittext_padding"
+                    android:paddingRight="@dimen/register_edittext_padding"
+                    android:textColor="@color/edittext_font_color"
+                    android:textColorHint="@color/edittext_hint_font_color"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/edittext_font_size"
+                    app:hasMark="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/register_name"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <requestFocus
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/register_row_space"
+                android:background="@color/form_row_color"
+                android:layoutDirection="rtl"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin">
+
+                <TextView
+                    android:id="@+id/register_tv_email"
+                    android:layout_width="@dimen/register_label_width"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/register_email"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <israel13.androidtv.Utils.CustomEditText
+                    android:id="@+id/register_edit_email"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/register_edittext_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/register_tv_email"
+                    android:background="@drawable/edit_background_blue"
+                    android:focusable="true"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/register_email"
+                    android:inputType="textNoSuggestions"
+                    android:nextFocusDown="@+id/register_edit_email_verification"
+                    android:nextFocusUp="@+id/register_edit_name"
+                    android:paddingLeft="@dimen/register_edittext_padding"
+                    android:paddingRight="@dimen/register_edittext_padding"
+                    android:textColor="@color/edittext_font_color"
+                    android:textColorHint="@color/edittext_hint_font_color"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/edittext_font_size"
+                    app:hasMark="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/register_row_space"
+                android:background="@color/form_row_color"
+                android:layoutDirection="rtl"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin">
+
+                <TextView
+                    android:id="@+id/register_tv_email_verification"
+                    android:layout_width="@dimen/register_label_width"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/register_email_verification"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <israel13.androidtv.Utils.CustomEditText
+                    android:id="@+id/register_edit_email_verification"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/register_edittext_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/register_tv_email_verification"
+                    android:background="@drawable/edit_background_blue"
+                    android:focusable="true"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/register_email_verification"
+                    android:inputType="textNoSuggestions"
+                    android:nextFocusDown="@+id/register_edit_password"
+                    android:nextFocusUp="@+id/register_edit_email"
+                    android:paddingLeft="@dimen/register_edittext_padding"
+                    android:paddingRight="@dimen/register_edittext_padding"
+                    android:textColor="@color/edittext_font_color"
+                    android:textColorHint="@color/edittext_hint_font_color"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/edittext_font_size"
+                    app:hasMark="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/register_row_space"
+                android:background="@color/form_row_color"
+                android:layoutDirection="rtl"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin">
+
+                <TextView
+                    android:id="@+id/register_tv_password"
+                    android:layout_width="@dimen/register_label_width"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/register_password"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <israel13.androidtv.Utils.CustomEditText
+                    android:id="@+id/register_edit_password"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/register_edittext_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/register_tv_password"
+                    android:background="@drawable/edit_background_blue"
+                    android:focusable="true"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/register_password"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@+id/register_edit_confirm_password"
+                    android:nextFocusUp="@+id/register_edit_email_verification"
+                    android:paddingLeft="@dimen/register_edittext_padding"
+                    android:paddingRight="@dimen/register_edittext_padding"
+                    android:textColor="@color/edittext_font_color"
+                    android:textColorHint="@color/edittext_hint_font_color"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/edittext_font_size"
+                    app:hasMark="true" />
+
+                <Button
+                    android:id="@+id/register_btn_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/register_show_password_button_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/register_show_password_button_margin_left"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="@dimen/register_show_password_button_margin_top"
+                    android:background="@drawable/button_backgroud_grey"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:nextFocusDown="@+id/register_edit_confirm_password"
+                    android:nextFocusUp="@+id/register_edit_password"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/register_show_password"
+                    android:textColor="@color/button_hint_font_color"
+                    android:textSize="@dimen/hint_font_size"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/register_row_space"
+                android:background="@color/form_row_color"
+                android:layoutDirection="rtl"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin">
+
+                <TextView
+                    android:id="@+id/register_tv_confirm_password"
+                    android:layout_width="@dimen/register_label_width"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/register_confirm_password"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <israel13.androidtv.Utils.CustomEditText
+                    android:id="@+id/register_edit_confirm_password"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/register_edittext_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/register_tv_confirm_password"
+                    android:background="@drawable/edit_background_blue"
+                    android:focusable="true"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/register_reenter_password"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@+id/register_btn_country_code"
+                    android:nextFocusUp="@+id/register_edit_password"
+                    android:paddingLeft="@dimen/register_edittext_padding"
+                    android:paddingRight="@dimen/register_edittext_padding"
+                    android:textColor="@color/edittext_font_color"
+                    android:textColorHint="@color/edittext_hint_font_color"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/edittext_font_size"
+                    app:hasMark="true" />
+
+                <Button
+                    android:id="@+id/register_btn_confirm_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/register_show_password_button_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/register_show_password_button_margin_left"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="@dimen/register_show_password_button_margin_top"
+                    android:background="@drawable/button_backgroud_grey"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:nextFocusDown="@+id/register_edit_phone"
+                    android:nextFocusUp="@+id/register_edit_confirm_password"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/register_show_password"
+                    android:textColor="@color/button_hint_font_color"
+                    android:textSize="@dimen/hint_font_size"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/register_row_space"
+                android:background="@color/form_row_color"
+                android:layoutDirection="rtl"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin">
+
+                <TextView
+                    android:id="@+id/register_tv_phone"
+                    android:layout_width="@dimen/register_label_width"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/register_phone"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <israel13.androidtv.Utils.CustomEditText
+                    android:id="@+id/register_edit_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/register_edittext_height"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/register_tv_phone"
+                    android:layout_toRightOf="@+id/register_btn_country_code"
+                    android:background="@drawable/edit_background_blue"
+                    android:focusable="true"
+                    android:gravity="right|center_vertical"
+                    android:inputType="phone"
+                    android:nextFocusDown="@+id/register_edit_capture_code"
+                    android:nextFocusUp="@+id/register_btn_country_code"
+                    android:paddingLeft="@dimen/register_edittext_padding"
+                    android:paddingRight="@dimen/register_edittext_padding"
+                    android:textColor="@color/edittext_font_color"
+                    android:textColorHint="@color/edittext_hint_font_color"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/edittext_font_size"
+                    app:hasMark="true" />
+
+                <Button
+                    android:id="@+id/register_btn_country_code"
+                    android:layout_width="@dimen/register_code_button_width"
+                    android:layout_height="@dimen/register_code_button_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/register_spinner_margin_left"
+                    android:layout_marginTop="@dimen/register_spinner_margin_top"
+                    android:background="@drawable/button_backgroud_grey"
+                    android:focusable="true"
+                    android:gravity="left|center_vertical"
+                    android:nextFocusDown="@+id/register_edit_phone"
+                    android:nextFocusForward="@+id/register_edit_phone"
+                    android:nextFocusUp="@+id/register_edit_confirm_password"
+                    android:paddingLeft="40dp"
+                    android:text="+972"
+                    android:textColor="@color/button_hint_font_color"
+                    android:textDirection="ltr"
+                    android:textSize="@dimen/hint_font_size" />
+
+                <ImageView
+                    android:id="@+id/register_img_flag"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignLeft="@+id/register_btn_country_code"
+                    android:layout_alignTop="@+id/register_btn_country_code"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:translationZ="10px" />
+
+                <ImageView
+                    android:id="@+id/register_img_code_arrow"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignRight="@+id/register_btn_country_code"
+                    android:layout_alignTop="@+id/register_btn_country_code"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/arrow_down"
+                    android:gravity="center_vertical"
+                    android:translationZ="10px" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/register_row_space"
+                android:background="@color/form_row_color"
+                android:layoutDirection="rtl"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin">
+
+                <TextView
+                    android:id="@+id/register_tv_capture_code"
+                    android:layout_width="@dimen/register_label_width"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/register_chapture_code"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/register_tv_capture_code"
+                    android:layoutDirection="ltr"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <ImageButton
+                        android:id="@+id/register_btn_capture_code"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:padding="5dp"
+                        android:scaleType="fitXY"/>
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="center_vertical">
+
+                        <ImageButton
+                            android:id="@+id/register_btn_get_capture_code"
+                            android:layout_width="@dimen/register_get_capture_code_button_width"
+                            android:layout_height="@dimen/register_get_capture_code_button_height"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="15dp"
+                            android:background="@drawable/refresh_capture_code_background"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:nextFocusDown="@+id/register_edit_referral_code"
+                            android:nextFocusUp="@+id/register_edit_capture_code"
+                            android:padding="5dp"
+                            android:scaleType="fitXY"/>
+
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <israel13.androidtv.Utils.CustomEditText
+                                android:id="@+id/register_edit_capture_code"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/register_edittext_height"
+                                android:background="@drawable/edit_background_blue"
+                                android:focusable="true"
+                                android:inputType="textNoSuggestions"
+                                android:nextFocusDown="@+id/register_edit_referral_code"
+                                android:nextFocusUp="@+id/register_edit_phone"
+                                android:paddingLeft="@dimen/register_edittext_padding"
+                                android:paddingRight="@dimen/register_edittext_padding"
+                                android:textColor="@color/edittext_font_color"
+                                android:textColorHint="@color/edittext_hint_font_color"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:imeActionId="@integer/slideEdgeStart"
+                                android:textDirection="ltr"
+                                android:textSize="@dimen/edittext_font_size" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:text="@string/register_chapture_code_decription"
+                            android:textColor="@color/label_font_color"
+                            android:textSize="@dimen/explain_font_size" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/register_row_space"
+                android:background="@drawable/group_background"
+                android:layoutDirection="rtl"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin">
+
+                <TextView
+                    android:id="@+id/register_tv_optional_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="@string/register_referral_code_title"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/register_group_title_font_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/register_tv_referral_code"
+                    android:layout_width="@dimen/register_label_width"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/register_tv_optional_title"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="@string/register_referral_code"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/label_font_size" />
+
+                <RelativeLayout
+                    android:id="@+id/register_layout_referral_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/register_tv_optional_title"
+                    android:layout_toLeftOf="@+id/register_tv_referral_code">
+
+                    <israel13.androidtv.Utils.CustomEditText
+                        android:id="@+id/register_edit_referral_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/register_edittext_height"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/edit_background_blue"
+                        android:focusable="true"
+                        android:gravity="right|center_vertical"
+                        android:hint="@string/register_referral_code"
+                        android:inputType="textNoSuggestions"
+                        android:nextFocusDown="@+id/register_btn_join_us"
+                        android:nextFocusUp="@+id/register_edit_capture_code"
+                        android:paddingLeft="@dimen/register_edittext_padding"
+                        android:paddingRight="@dimen/register_edittext_padding"
+                        android:textColor="@color/edittext_font_color"
+                        android:textColorHint="@color/edittext_hint_font_color"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/edittext_font_size"
+                        android:singleLine="true"
+                        android:maxLines="1"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignStart="@+id/register_layout_referral_code"
+                    android:layout_below="@+id/register_layout_referral_code"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingTop="5dp"
+                    android:text="@string/register_referral_code_explain"
+                    android:textColor="@color/label_font_color"
+                    android:textSize="@dimen/explain_font_size" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/register_btn_join_us"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/register_button_height"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin"
+                android:background="@drawable/button_background_blue"
+                android:elevation="5dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:nextFocusDown="@+id/register_edit_name"
+                android:nextFocusUp="@+id/register_edit_referral_code"
+                android:padding="10dp"
+                android:text="@string/register_join_us"
+                android:textColor="@color/button_font_color"
+                android:textSize="@dimen/label_font_size"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/bottomView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="@dimen/main_container_horz_margin"
+                android:layout_marginRight="@dimen/main_container_horz_margin"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

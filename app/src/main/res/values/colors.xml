@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="form_background_color">#ededed</color>
+    <color name="form_row_color">#fff</color>
+    <color name="label_font_color">#524b4b</color>
+    <color name="edittext_font_color">#524b4b</color>
+    <color name="edittext_error_font_color">#FF0000</color><!--#a94442-->
+    <color name="edittext_hint_font_color">#cacaca</color>
+    <color name="button_hint_font_color">#524b4b</color>
+    <color name="link_font_color">#fff</color>
+    <color name="button_font_color">#fff</color>
+    <color name="border_color">#ccc</color>
+
+    <color name="background_gradient_start">#000000</color>
+    <color name="background_gradient_end">#DDDDDD</color>
+    <color name="fastlane_background">#0096a6</color>
+    <color name="search_opaque">#ffaa3f</color>
+    <color name="selected_background">#ffaa3f</color>
+    <color name="detail_background">#0096a6</color>
+    <color name="soft_opaque">#30000000</color>
+    <color name="img_soft_opaque">#30FF0000</color>
+    <color name="img_full_opaque">#00000000</color>
+    <color name="black_opaque">#AA000000</color>
+    <color name="black">#59000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="orange_transparent">#AAFADCA7</color>
+    <color name="orange">#FADCA7</color>
+    <color name="yellow">#EEFF41</color>
+    <color name="default_background">#3d3d3d</color>
+    <color name="green_full">#00FF00</color>
+    <color name="red_full">#FF0000</color>
+    <color name="red">#FF0080</color>
+    <color name="red1">#7a003d</color>
+    <color name="red2">#ff3299</color>
+    <color name="yellow1">#ffbd00</color>
+    <color name="gray">#D3D3D3</color>
+    <color name="colorPrimary">#143753</color>
+    <color name="colorPrimaryDark">#113448</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="color_darkgrey">#4d4d4d</color>
+    <color name="transparent">#00000000</color>
+    <color name="black_transparent">#95000000</color>
+    <color name="episode_button">#081621</color>
+    <color name="yellow_search">#e6e600</color>
+    <color name="sky_blue">#22a0c0</color>
+    <color name="guide_odd">#DDDDDD</color>
+    <color name="guide_even">#AAAAAA</color>
+
+    <color name="keyboard_color">#EEEEEE</color>
+</resources>

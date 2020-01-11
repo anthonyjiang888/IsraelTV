@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout_basic_package_expired"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/popup_padding" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="right"
+            android:padding="5dp"
+            android:text="אין הרשאה!"
+            android:textColor="#FFF"
+            android:textSize="@dimen/popup_oksize"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:focusable="false"
+            android:src="@drawable/cross_red" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:layoutDirection="rtl"
+                android:padding="5dp"
+                android:text="אינך רשאי לצפות בתוכן זה מכיוון שהחבילה שרכשת היא חבילה חסכונית"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/popup_textsize" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:layoutDirection="rtl"
+                android:padding="5dp"
+                android:text="לשדרוג החבילה יש להיכנס לאתר בכתובת: israel.tv"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/popup_textsize" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:layoutDirection="rtl"
+                android:padding="5dp"
+                android:text="לאחר כניסתכם לאתר יש להתחבר לחשבונכם ואז לרכוש חבילה, בסיום הרכישה המנוי יעודכן אוטומטית."
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/popup_textsize" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/ok_basic_package"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/popup_padding"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/search_button_bg"
+        android:focusable="true"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="אישור"
+        android:textColor="#FFF"
+        android:textSize="@dimen/popup_oksize" />
+
+</LinearLayout>

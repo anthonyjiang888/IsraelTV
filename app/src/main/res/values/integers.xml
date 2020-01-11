@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="edit_level_normal">0</integer>
+    <integer name="edit_level_focus">1</integer>
+    <integer name="edit_level_error">2</integer>
+</resources>

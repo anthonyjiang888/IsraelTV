@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:text="אנא בחר היכן לחפש"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="150dp"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/search_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_weight="0.30"
+                android:background="@drawable/sort_button_bg"
+                android:focusable="true"
+                android:gravity="center"
+                android:nextFocusRight="@+id/edit_text_search"
+                android:nextFocusUp="@+id/live_search"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+
+                android:singleLine="true"
+                android:text="חפש"
+                android:textColor="#FFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/edit_text_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="0.70"
+                android:background="@drawable/edit_search"
+                android:drawablePadding="4dp"
+                android:drawableRight="@drawable/srch"
+                android:focusable="true"
+                android:gravity="right|center_vertical"
+                android:hint="@string/hints_search"
+                android:nextFocusRight="@+id/search_button"
+                android:textColor="#000"
+                android:textColorHint="#848484"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="18sp"
+                android:singleLine="true"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/search_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fillViewport="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/container_live_tv_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/live_tv_numberof_results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#5b5b5b"
+                            android:gravity="right|center"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Live tv view"
+                            android:textColor="#FFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <israel13.androidtv.Utils.CustomRecyclerView
+                            android:id="@+id/live_tv_new_search_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:isScrollContainer="false"
+                            android:nestedScrollingEnabled="false"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/live_tv_numberof_no_results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="right"
+                            android:paddingBottom="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:textColor="#FFF"
+                            android:textSize="17sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_record_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/record_number_of_Results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="#5b5b5b"
+                            android:focusable="false"
+                            android:gravity="right|center"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Record view"
+                            android:textColor="#FFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <israel13.androidtv.Utils.CustomRecyclerView
+                            android:id="@+id/record_new_search_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:isScrollContainer="false"
+                            android:nestedScrollingEnabled="false" />
+
+                        <israel13.androidtv.Utils.CustomRecyclerView
+                            android:id="@+id/record_child_new_search_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:isScrollContainer="false"
+                            android:nestedScrollingEnabled="false"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/record_number_of_no_Results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:textColor="#FFF"
+                            android:textSize="17sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_tv_show_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvshow_number_of_results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="#5b5b5b"
+                            android:gravity="right"
+                            android:paddingBottom="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:text="Tv show view"
+                            android:textColor="#FFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <israel13.androidtv.Utils.NonscrollRecylerview
+                            android:id="@+id/tvshow_new_search_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:isScrollContainer="false"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:id="@+id/tvshow_number_of_no_results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingBottom="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:textColor="#FFF"
+                            android:textSize="17sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_movies_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/movies_number_of_results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="#5b5b5b"
+                            android:gravity="right"
+                            android:paddingBottom="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:text="Movies view"
+                            android:textColor="#FFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <israel13.androidtv.Utils.NonscrollRecylerview
+                            android:id="@+id/movies_new_search_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:isScrollContainer="false"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:id="@+id/movies_number_of_no_results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingBottom="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:textColor="#FFF"
+                            android:textSize="17sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_radio_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/radio_number_of_results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#5b5b5b"
+                            android:gravity="right|center"
+                            android:paddingBottom="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:text="Radio view"
+                            android:textColor="#FFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <israel13.androidtv.Utils.CustomRecyclerView
+                            android:id="@+id/radio_new_search_recyclerview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:focusable="false"
+                            android:isScrollContainer="false"
+                            android:nestedScrollingEnabled="false"
+                            android:scrollingCache="true"
+                            android:smoothScrollbar="true"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/radio_number_of_no_results"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Radio view"
+                            android:textColor="#FFF"
+                            android:textSize="17sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/keyboard_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#000000"
+                android:focusable="false"
+                android:gravity="end"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/key_digit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:focusable="false"
+                    android:foregroundGravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/key_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:focusable="true"
+                        android:text="1"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:focusable="true"
+                        android:text="2"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:focusable="true"
+                        android:text="3"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="4"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="5"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="6"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="7"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="8"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="9"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_0"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="0"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <ImageButton
+                        android:id="@+id/xBack"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1.5"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:src="@drawable/sym_keyboard_delete"
+                        android:text=""
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:layout_margin="3dp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/key_Qof"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Qof"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Resh"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Resh"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Alef"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Alef"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Tet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Tet"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Vav"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Vav"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_NunSofit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/NunSofit"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_MemSofit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/MemSofit"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Pe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Pe"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_bracket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="'"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_line"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="-"
+                        android:textSize="@dimen/keyboard_textsize" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="0.5"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:focusable="false"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/key_Shin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Shin"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Dalet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Dalet"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Gimel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Gimel"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Kaf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Kaf"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Ayin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Ayin"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Yod"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Yod"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Het"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Het"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Lamed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Lamed"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Koof"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Koof"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_PeSofit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/PeSofit"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_exmark"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="!"
+                        android:textSize="@dimen/keyboard_textsize"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/xSubmit"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:drawableRight="@drawable/ic_search_white"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="15dp"
+                        android:text="@string/submit"
+                        android:textColor="#EEE"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+
+                    android:focusable="false"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_margin="3dp"
+                        android:text="Q"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/key_Zayin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Zayin"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Samekh"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Samekh"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Bet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Bet"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_He"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/He"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Nun"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Nun"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Mem"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Mem"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Tsadi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Tsadi"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_Tav"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/Tav"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_TsadiSofit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="@string/TsadiSofit"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_comma"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text=","
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_dot"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text="."
+                        android:textSize="@dimen/keyboard_textsize" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:layout_margin="3dp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/key_left"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text=""
+                        android:textSize="@dimen/keyboard_textsize"
+                        android:visibility="gone" />
+
+                    <ImageButton
+                        android:id="@+id/xSpace"
+                        android:layout_width="500dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:src="@drawable/sym_keyboard_space"
+                        android:text="@string/OwnIMESpace"
+                        android:textSize="@dimen/keyboard_textsize" />
+
+                    <Button
+                        android:id="@+id/key_right"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/search_edit_keyboard"
+                        android:text=""
+                        android:textSize="@dimen/keyboard_textsize"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

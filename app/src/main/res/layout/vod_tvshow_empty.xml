@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/totalview_child_vod_tvshow_videoplay"
+
+    android:focusable="true"
+    android:clickable="true"
+    android:padding="10dp"
+    >
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="true"
+        android:paddingTop="6px"
+        android:paddingBottom="6px"
+        android:paddingLeft="8px"
+        android:paddingRight="8px"
+        android:background="@drawable/custom_bg4">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:id="@+id/thumbnail_image_vod_tvshow_videoplay"
+            android:layout_height="250px"
+
+            android:focusable="false"
+            android:adjustViewBounds="true"
+            app:riv_border_width="1dp"
+            app:riv_corner_radius="10dip"
+            app:riv_mutate_background="true"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:visibility="visible"
+            android:layout_gravity="bottom"
+            android:textSize="16sp"
+            android:textColor="#FFF"
+            android:id="@+id/text_episode_name"
+            android:gravity="center"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:id="@+id/play_button_vod_tvshow_videoplay"
+            android:focusable="false"
+            />
+
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:id="@+id/layout_root_vodmain">
+
+
+    <ScrollView
+        android:id="@+id/gridscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:gravity="right"
+                android:text="קטגוריות ספריית וי או די"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <israel13.androidtv.Utils.NonscrollRecylerview
+                android:id="@+id/gridview_categories_vod_main_page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:focusable="false"
+                android:nestedScrollingEnabled="false"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:gravity="right"
+                        android:text="מה חדש בסדרות/תוכניות ועוד"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+
+                    <israel13.androidtv.Utils.CustomRecyclerView
+                        android:id="@+id/recycler_view_tvshows_activity_mainpage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:focusable="false"
+                        android:isScrollContainer="false"
+                        android:nestedScrollingEnabled="false"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="10dp"
+                    android:focusable="false"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:gravity="right"
+                        android:text="מה חדש בסרטים"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+
+                    <israel13.androidtv.Utils.CustomRecyclerView
+                        android:id="@+id/recycler_view_movies_activity_mainpage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="-5dp"
+                        android:layout_marginTop="5dp"
+                        android:focusable="false"
+                        android:isScrollContainer="false"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

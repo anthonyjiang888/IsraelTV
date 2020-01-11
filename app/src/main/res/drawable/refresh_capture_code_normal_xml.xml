@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item><layer-list>
+        <item><shape>
+            <solid android:color="@android:color/transparent"/>
+            <padding android:top="5dp" android:bottom="5dp"/>
+            <padding android:left="5dp" android:right="5dp"/>
+
+        </shape></item>
+        <item ><bitmap android:gravity="center" android:src="@drawable/refresh_capture_code_focused" /></item>
+    </layer-list></item>
+
+</selector>

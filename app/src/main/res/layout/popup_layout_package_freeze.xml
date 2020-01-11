@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/totalview_popup_package_freeze"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layoutDirection="rtl"
+        android:padding="@dimen/popup_padding" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:focusable="false"
+            android:gravity="right"
+            android:padding="5dp"
+            android:text="המנוי מוקפא!"
+            android:textColor="#FFF"
+            android:textSize="@dimen/popup_oksize"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:focusable="false"
+            android:src="@drawable/cross_red" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/freezedate_package_freeze"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header"
+                android:layout_marginTop="5dp"
+                android:focusable="false"
+                android:layoutDirection="rtl"
+                android:padding="5dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/popup_oksize" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/freezedate_package_freeze"
+                android:focusable="false"
+                android:layoutDirection="rtl"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="ביטול הקפאת מנוי אפשרי דרך האתר בלבד בכתובת: israel.tv \n או דרך יצירת קשר עם התמיכה שלנו"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/popup_textsize" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/popup_padding"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/ok_popup_freeze"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/search_button_bg"
+            android:focusable="true"
+            android:gravity="center|bottom"
+            android:padding="15dp"
+            android:text="אישור"
+            android:textColor="#FFF"
+            android:textSize="@dimen/popup_oksize" />
+    </LinearLayout>
+
+</LinearLayout>
